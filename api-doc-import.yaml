@@ -1,0 +1,26 @@
+enabled: true
+
+# Default output path for imported API documentation
+output_path: ''
+
+# Default settings for imported endpoints
+defaults:
+  taxonomy:
+    category: docs
+  template: api-endpoint
+
+# Mapping of OpenAPI tags to folder structure
+# Leave empty to auto-generate from tags
+tag_mapping: {}
+
+# Whether to organize endpoints by tags (folders) or flat
+organize_by_tags: true
+
+# Prefix for generated folder names (e.g., "01." for ordering)
+folder_prefix_start: 1
+
+# Whether to update existing pages or skip them
+update_existing: false
+
+# Whether to preserve manual content additions when updating
+preserve_content: true

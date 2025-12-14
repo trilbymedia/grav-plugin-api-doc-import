@@ -1,0 +1,76 @@
+name: API Doc Import
+slug: api-doc-import
+type: plugin
+version: 1.0.0
+description: Import OpenAPI/Swagger specifications into Grav pages for the Helios theme
+icon: file-import
+author:
+  name: Trilby Media
+  email: hello@trilby.media
+homepage: https://github.com/trilbymedia/grav-plugin-api-doc-import
+keywords: grav, plugin, openapi, swagger, api, documentation, import
+bugs: https://github.com/trilbymedia/grav-plugin-api-doc-import/issues
+docs: https://github.com/trilbymedia/grav-plugin-api-doc-import/blob/main/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
+  - { name: helios, version: '>=1.0.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    output_path:
+      type: text
+      label: Default Output Path
+      help: Base path for imported API docs (e.g., "api-reference"). Leave empty to prompt each time.
+      placeholder: api-reference
+
+    organize_by_tags:
+      type: toggle
+      label: Organize by Tags
+      help: Create subfolders based on OpenAPI tags
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+
+    folder_prefix_start:
+      type: number
+      label: Folder Prefix Start
+      help: Starting number for folder ordering prefixes (e.g., 01.users, 02.posts)
+      default: 1
+      validate:
+        min: 0
+
+    update_existing:
+      type: toggle
+      label: Update Existing Pages
+      help: Update pages if they already exist (otherwise skip)
+      highlight: 0
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+
+    preserve_content:
+      type: toggle
+      label: Preserve Manual Content
+      help: When updating, preserve any manually added content below frontmatter
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO

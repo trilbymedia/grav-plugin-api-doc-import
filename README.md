@@ -17,7 +17,7 @@ Import OpenAPI/Swagger specifications into Grav pages for the Helios documentati
 
 - Grav 1.7+
 - PHP 8.1+
-- [Helios Theme](https://github.com/trilbymedia/grav-theme-helios) 1.0+
+- [Helios Documentation Theme](https://getgrav.org/premium/helios) 1.0+
 
 ## Installation
 
